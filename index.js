@@ -17,15 +17,16 @@ function addMovie(event){
         delBtn.addEventListener("click", deleteMovie);
         movie.appendChild(delBtn);
         list.appendChild(movie);
-        // message.textContent = "Movie Added!"
+        message.textContent = `${movieTitle.textContent} Added!`
         inputField.value = "";
+        revealMsg();
     }
 
 }
 
 function deleteMovie(event){
     event.target.parentNode.remove();
-    message.textContent = `${event.target.parentNode.textContent} deleted!`;
+    message.textContent = `${event.target.parentNode.childNodes[0].textContent} deleted!`;
     revealMsg();
 }
 
